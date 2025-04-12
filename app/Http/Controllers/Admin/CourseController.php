@@ -9,23 +9,17 @@ class CourseController extends Controller
 {
     public function AllOnCourseHome(){
         $result=Course::limit(4)->get();
-        return response()->json([
-            'result'=>$result
-        ],200);
+        return $result;
     }
 
     public function AllCourses(){
         $result=Course::all();
-        return response()->json([
-            'result'=>$result
-        ],200);
+        return $result;
     }
 
     public function OnSelectCourse(Request $request){
         $id=$request->id;
         $result=Course::where('id',$id)->get();
-        return response()->json([
-            'result'=>$result
-        ],200);
+        return $result;
     }
 }

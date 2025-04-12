@@ -10,22 +10,16 @@ class ProjectsController extends Controller
     public function AllOnProjectHome()
     {
         $result = Project::limit(3)->get();
-        return response()->json([
-            'project' => $result
-        ], 200);
+         return $result;
     }
     public function AllOnProjectAllData()
     {
         $result = Project::all();
-        return response()->json([
-            'project' => $result
-        ], 200);
+         return $result;
     }
     public function OnSelectProject(Request $request)
     {
         $result = Project::where('id', $request->id)->get();
-        return response()->json([
-            'project' => $result
-        ], 200);
+         return $result;
     }
 }

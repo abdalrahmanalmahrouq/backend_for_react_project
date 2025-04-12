@@ -9,8 +9,6 @@ class ServiceController extends Controller
 {
    public function AllServicesData(){
         $result=Services::all();
-        return response()->json([
-            'services'=>$result
-        ],200);
+        return $result;
     }
 }

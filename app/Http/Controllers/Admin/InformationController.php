@@ -9,8 +9,6 @@ class InformationController extends Controller
 {
     public function AllInformationData(){
         $result=Information::all();
-        return response()->json([
-            'information'=>$result
-        ],200);
+        return $result;
     }
 }

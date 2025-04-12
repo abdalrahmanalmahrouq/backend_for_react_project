@@ -9,8 +9,6 @@ class FooterController extends Controller
 {
     public function AllFooterData(){
         $result=Footer::all();
-        return response()->json([
-            'footer'=>$result
-        ],200);
+        return $result;
     }
 }
