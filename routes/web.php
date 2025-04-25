@@ -28,3 +28,12 @@ Route::middleware([
 });
 
 Route::get('/logout',[AdminUserCotroller::class,'AdminLogout'])->name('admin.logout');
+
+
+Route::prefix('admin')->group(function(){
+
+
+    Route::get('/user/profile',[AdminUserCotroller::class,'UserProfileInformation'])->name('user.profile');
+    Route::get('/user/profile/edit',[AdminUserCotroller::class,'UserProfileInformationEdit'])->name('user.profile.edit');
+    Route::post('/user/profile/store',[AdminUserCotroller::class,'UserProfileStore'])->name('user.profile.store');
+});
