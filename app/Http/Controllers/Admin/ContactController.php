@@ -10,11 +10,19 @@ class ContactController extends Controller
 {
     public function addContactinfo(Request $request)
     {
+
+        $ContactArray=json_decode($request->getContent(),true);
+
+        $name=$ContactArray['name'];
+        $email=$ContactArray['email'];
+        $massage=$ContactArray['massage'];
+        
+
         $data=Contact::insert(
             [
-                'name'=>$request->name,
-                'email'=>$request->email,
-                'massage'=>$request->massage,
+                'name'=>$name,
+                'email'=>$email,
+                'massage'=>$massage,
                 'created_at'=>now(),
             ]
             );

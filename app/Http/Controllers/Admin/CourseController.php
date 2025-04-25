@@ -17,8 +17,8 @@ class CourseController extends Controller
         return $result;
     }
 
-    public function OnSelectCourse(Request $request){
-        $id=$request->id;
+    public function OnSelectCourse($courseId){
+        $id=$courseId;
         $result=Course::where('id',$id)->get();
         return $result;
     }

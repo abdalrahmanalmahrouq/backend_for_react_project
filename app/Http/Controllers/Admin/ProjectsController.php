@@ -17,9 +17,10 @@ class ProjectsController extends Controller
         $result = Project::all();
          return $result;
     }
-    public function OnSelectProject(Request $request)
+    public function OnSelectProject($projectId)
     {
-        $result = Project::where('id', $request->id)->get();
+        $id=$projectId;
+        $result = Project::where('id',$id)->get();
          return $result;
     }
 }
