@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminUserCotroller;
+use App\Http\Controllers\Admin\InformationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,4 +37,19 @@ Route::prefix('admin')->group(function(){
     Route::get('/user/profile',[AdminUserCotroller::class,'UserProfileInformation'])->name('user.profile');
     Route::get('/user/profile/edit',[AdminUserCotroller::class,'UserProfileInformationEdit'])->name('user.profile.edit');
     Route::post('/user/profile/store',[AdminUserCotroller::class,'UserProfileStore'])->name('user.profile.store');
+
+    Route::get('/user/change/password',[AdminUserCotroller::class,'UserChangePassword'])->name('change.password');
+    Route::post('/user/update/password',[AdminUserCotroller::class,'UserUpdatePassword'])->name('update.password');
+    
 });
+
+Route::prefix('information')->group(function(){
+
+
+    Route::get('/about',[InformationController::class,'AllInformation'])->name('all.information');
+    Route::get('/add',[InformationController::class,'AddInformation'])->name('add.information');
+    Route::post('/store',[InformationController::class,'StoreInformation'])->name('information.store');
+    Route::get('/edit',[InformationController::class,'EditInformation'])->name('edit.information');
+    
+});
+

@@ -1,12 +1,12 @@
 <div class="deznav">
             
 				<ul class="metismenu" id="menu">
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <li><a class="has-arrow ai-icon" href="{{route('dashboard')}}" aria-expanded="false">
 							<i class="flaticon-144-layout"></i>
 							<span class="nav-text">Dashboard</span>
 						</a>
                         <ul aria-expanded="false">
-							<li><a href="index.html">Dashboard</a></li>
+							<li><a href="{{route('dashboard')}}">Dashboard</a></li>
 							<li><a href="my-wallets.html">Wallet</a></li>
 							<li><a href="tranasactions.html">Transactions</a></li>
 							<li><a href="coin-details.html">Coin Details</a></li>
@@ -22,7 +22,7 @@
 						</a>
                         <ul aria-expanded="false">
 							<li><a href="{{ route('user.profile') }}">User Profile</a></li>
-							<li><a href="my-wallets.html">Change Password</a></li>
+							<li><a href="{{ route('change.password')}}">Change Password</a></li>
 							
 						</ul>
 
@@ -30,6 +30,19 @@
 
                     
                    
+
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<i class="flaticon-061-puzzle"></i>
+							<span class="nav-text">Information</span>
+						</a>
+                        <ul aria-expanded="false">
+							<li><a href="{{ route('all.information') }}">All Information</a></li>
+							<li><a href="{{ route('add.information')}}">Add Information</a></li>
+							
+						</ul>
+                    </li>
+
+
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
 							<i class="flaticon-061-puzzle"></i>
 							<span class="nav-text">Charts</span>
