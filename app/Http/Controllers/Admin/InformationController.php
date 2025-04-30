@@ -17,11 +17,7 @@ class InformationController extends Controller
         return view('backend.information.all_information',compact('result'));
     }
 
-    public function EditInformation(){
-        $result=Information::all();
-        return view('backend.information.edit_information',compact('result'));
-    }
-
+   
     public function AddInformation( ){
             return view('backend.information.add_information');
        
@@ -41,4 +37,33 @@ class InformationController extends Controller
         );
         return Redirect()->route('all.information')->with($notification);
     }
+
+
+     public function EditInformation($id){
+        $information=Information::findorfail($id);
+        return view('backend.information.edit_information',compact('information'));
+    }
+    
+    public function UpdateInformation(Request $request,$id){
+        Information::findorfail($id)->update([
+            'about'=>$request->about,
+            'terms'=>$request->terms,
+            'policy'=>$request->policy,
+            'privacy'=>$request->privacy,
+        ]);
+        $notification=array(
+            'message' => "Information  Updated Successfully",
+            'alert-type' =>"info"
+        );
+        return Redirect()->route('all.information')->with($notification);
+    }
+    public function DeleteInformation($id){
+        Information::findorfail($id)->delete();
+        $notification=array(
+            'message' => "Information  Deleted Successfully",
+            'alert-type' =>"success"
+        );
+        return Redirect()->back()->with($notification);
+    }
+   
 }

@@ -53,7 +53,7 @@
                                         <div class="form-group">
                                             <textarea class="form-control" name='privacy' rows="4" id="comment"></textarea>
                                         </div>
-                                        <input type='submit' class='btn btn-success' value='Update Password' />
+                                        <input type='submit' class='btn btn-success' value='Add Information' />
                                     </form>
                                   
                                 </div>
@@ -70,4 +70,5 @@
 
         
 
-@endsection
+
+        @endsection
