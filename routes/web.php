@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminUserCotroller;
 use App\Http\Controllers\Admin\InformationController;
+use App\Http\Controllers\Admin\ServiceController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -55,3 +57,18 @@ Route::prefix('information')->group(function(){
     
 });
 
+
+
+Route::prefix('services')->group(function(){
+
+
+    Route::get('/all',[ServiceController::class,'AllServices'])->name('all.services');
+    Route::get('/add',[ServiceController::class,'AddServices'])->name('add.services');
+    Route::post('/store',[ServiceController::class,'StoreService'])->name('store.service');
+
+    Route::get('/edit/{id}',[ServiceController::class,'EditService'])->name('edit.service');
+    Route::post('/update/{id}',[ServiceController::class,'UpdateService'])->name('update.service');
+
+    Route::get('/delete/{id}',[ServiceController::class,'DeleteService'])->name('delete.service');
+    
+});

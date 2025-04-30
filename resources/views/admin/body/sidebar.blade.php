@@ -43,19 +43,20 @@
                     </li>
 
 
+
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-061-puzzle"></i>
-							<span class="nav-text">Charts</span>
+							<i class="flaticon-003-diamond"></i>
+							<span class="nav-text">Services</span>
 						</a>
                         <ul aria-expanded="false">
-                            <li><a href="./chart-flot.html">Flot</a></li>
-                            <li><a href="./chart-morris.html">Morris</a></li>
-                            <li><a href="./chart-chartjs.html">Chartjs</a></li>
-                            <li><a href="./chart-chartist.html">Chartist</a></li>
-                            <li><a href="./chart-sparkline.html">Sparkline</a></li>
-                            <li><a href="./chart-peity.html">Peity</a></li>
-                        </ul>
+							<li><a href="{{ route('all.services') }}">All Services</a></li>
+							<li><a href="{{ route('add.services')}}">Add Services</a></li>
+							
+						</ul>
                     </li>
+
+
+                   
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
 							<i class="flaticon-003-diamond"></i>
 							<span class="nav-text">Bootstrap</span>
