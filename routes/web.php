@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminUserCotroller;
 use App\Http\Controllers\Admin\InformationController;
 use App\Http\Controllers\Admin\ServiceController;
-
+use App\Http\Controllers\Admin\ProjectsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -65,10 +65,20 @@ Route::prefix('services')->group(function(){
     Route::get('/all',[ServiceController::class,'AllServices'])->name('all.services');
     Route::get('/add',[ServiceController::class,'AddServices'])->name('add.services');
     Route::post('/store',[ServiceController::class,'StoreService'])->name('store.service');
-
     Route::get('/edit/{id}',[ServiceController::class,'EditService'])->name('edit.service');
     Route::post('/update/{id}',[ServiceController::class,'UpdateService'])->name('update.service');
-
     Route::get('/delete/{id}',[ServiceController::class,'DeleteService'])->name('delete.service');
+    
+});
+
+Route::prefix('projects')->group(function(){
+
+
+    Route::get('/all',[ProjectsController::class,'AllProjects'])->name('all.projects');
+    Route::get('/add',[ProjectsController::class,'AddProject'])->name('add.project');
+    Route::post('/store',[ProjectsController::class,'StoreProject'])->name('store.project');
+    Route::get('/edit/{id}',[ProjectsController::class,'EditProject'])->name('edit.project');
+    Route::post('/update/{id}',[ProjectsController::class,'UpdateProject'])->name('update.project');
+    Route::get('/delete/{id}',[ProjectsController::class,'DeleteProject'])->name('delete.project');
     
 });
